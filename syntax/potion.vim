@@ -36,6 +36,10 @@ syntax match potion_number "\v[0-9]"
 syntax match potion_number "\v[0-9]*$"
 syntax match potion_number "\v[0-9]*\.[0-9]*$"
 
+" strings
+syntax region potion_string start=/\v"/ skip=/\v\\./ end=/\v"/
+syntax region potion_string start=/\v'/ skip=/\v\\./ end=/\v'/
+
 " anything in <potion_keyword> group should be highlighted as a
 " keyword/function
 highlight link potion_keyword Keyword
@@ -43,5 +47,6 @@ highlight link potion_function Function
 highlight link potion_comment Comment
 highlight link potion_operator Operator
 highlight link potion_number Number
+highlight link potion_string String
 
 let b:current_syntax = "potion"
