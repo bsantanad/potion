@@ -30,11 +30,18 @@ syntax match potion_operator "\v/\="
 syntax match potion_operator "\v\+\="
 syntax match potion_operator "\v-\="
 
+" numbers
+" supports int and floats
+syntax match potion_number "\v[0-9]"
+syntax match potion_number "\v[0-9]*$"
+syntax match potion_number "\v[0-9]*\.[0-9]*$"
+
 " anything in <potion_keyword> group should be highlighted as a
 " keyword/function
 highlight link potion_keyword Keyword
 highlight link potion_function Function
 highlight link potion_comment Comment
 highlight link potion_operator Operator
+highlight link potion_number Number
 
 let b:current_syntax = "potion"
